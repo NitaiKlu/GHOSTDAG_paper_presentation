@@ -16,3 +16,5 @@ To watch it you must first:
 1. install reveal.js library.
 2. change the paths in presentation.html to the paths of the reveal.js directories you just downloaded.
 3. if you want to edit the .py animations, I used manim library.
+
+/*****A WORK IN PROGRESS*****/
