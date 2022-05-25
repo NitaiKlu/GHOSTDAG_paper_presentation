@@ -38,6 +38,19 @@
 			position: absolute;
 			top: -100px;
 		}
+
+		.container {
+			position: relative;
+		}
+
+		.container>img {
+			position: absolute;
+			left: 550px;
+		}
+
+		.container>img:first-child {
+			z-index: 2;
+		}
 	</style>
 </head>
 
@@ -113,148 +126,148 @@
 			</section>
 			<!--SLIDE 6 - PHANTOM PROTOCOL-------------------------------------------------------->
 			<section>
-				<h2>Touch Optimized</h2>
+				<h2>PHANTOM PROTOCOL</h2>
+				<p></p>
+				<h3 class="fragment" style="position: relative; right: 250px;">3 Steps Procedure:</h3>
 				<p>
-					Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your
-					slides.
+				<ol>
+					<li class="fragment">Use the DAG to extract misbehaved blocks.</li>
+					<ul class="fragment" style="position: relative; left: 40px;">
+						<li>Blocks referenced by only old blocks</li>
+						<li>Withheld by their creator for a long time</li>
+					</ul>
+					<p></p>
+					<li class="fragment">Complete the partial order of the DAG to a full topological one.</li>
+					<p></p>
+					<li class="fragment">The order of blocks dictates an order of transactions.</li>
+				</ol>
 				</p>
 			</section>
-
-			<section data-markdown>
-				<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-			</section>
-
+			<!--SLIDE 7 - Terminology--------------------------------------------------------->
 			<section>
-				<section id="fragments">
-					<h2>Fragments</h2>
-					<p>Hit the next arrow...</p>
-					<p class="fragment">... to step through ...</p>
-					<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span
-							class="fragment">slide.</span></p>
+				<h3>Terminology</h3>
+				<p></p>
+				<div style="position: absolute; right:550px; width: 560px;">
+					<p>
+					<ul>
+						<li>DAG - Directed Acyclic Graph</li>
+						<li>Past(B,G)</li>
+						<li>Future(B,G)</li>
+						<li>Anticone(B,G)</li>
+						<li>Tips(G)</li>
+						<li>Blue & Red blocks</li>
+					</ul>
+					</p>
+				</div>
 
-					<aside class="notes">
-						This slide has fragments which are also stepped through in the notes window.
-					</aside>
-				</section>
+				<!--to add here the videos from manim-->
+				<!--style="position: absolute; left:550px; width: 560px;"-->
+				<div>
+					<span style="position: absolute; left:550px; width: 560px;">
+						<img class="fragment" src="./media/images/Terminology/dag.PNG"></img>
+					</span>
+					<span style="position: absolute; left:550px; width: 560px;">
+						<img class="fragment" style="z-index: 1;" src="./media/images/Terminology/past.PNG">
+					</span>
+					<span style="position: absolute; left:550px; width: 560px;">
+						<img class="fragment" src="./media/images/Terminology/future.PNG">
+					</span>
+					<span style="position: absolute; left:550px; width: 560px;">
+						<img class="fragment" src="./media/images/Terminology/All_terms.PNG">
+					</span>
+				</div>
+				<div style="height: 200;"></div>
+			</section>
+			<!--SLIDE 8 - MINING RULES--------------------------------------------------------->
+			<section>
+				<h3>Mining Rules</h3>
+				<p>
+				<ol>
+					<li class="fragment">Reference to <label class="fragment highlight-red">all blocks</label> in
+						tips(G) when publishing a block.</li>
+					<p></p>
+					<li class="fragment">Broadcast as quickly as possible.</li>
+					<p></p>
+				</ol>
+				</p>
+				<div style="height: 250px;"></div>
+			</section>
+			<!--SLIDE 9 - ORDERING PROTOCOL--------------------------------------------------------->
+			<section>
+				<h3>Ordering Protocol</h3>
+				<p></p>
+				<p>
+				<ul>
+					<li>Recover from the challenge of inconsistency</li>
+					<p></p>
+					<li>Order all blocks and accept one at a time</li>
+					<p></p>
+					<li>Eliminate inconsistent transactions</li>
+				</ul>
+				</p>
+				<div style="height: 250px;"></div>
+			</section>
+			<!--SLIDE 10 - K-clusters--------------------------------------------------------->
+			<section>
 				<section>
-					<h2>Fragment Styles</h2>
-					<p>There's different types of fragments, like:</p>
-					<p class="fragment grow">grow</p>
-					<p class="fragment shrink">shrink</p>
-					<p class="fragment fade-out">fade-out</p>
+					<h2>K- Clusters</h2>
 					<p>
-						<span style="display: inline-block;" class="fragment fade-right">fade-right, </span>
-						<span style="display: inline-block;" class="fragment fade-up">up, </span>
-						<span style="display: inline-block;" class="fragment fade-down">down, </span>
-						<span style="display: inline-block;" class="fragment fade-left">left</span>
+						<img style="height: 100px;" src="./media/images/Terminology/k-cluster_def.PNG">
+						<img class="fragment" style="height: 350px;"
+							src="./media/images/k-cluster/k-cluster_examplef.PNG">
 					</p>
-					<p class="fragment fade-in-then-out">fade-in-then-out</p>
-					<p class="fragment fade-in-then-semi-out">fade-in-then-semi-out</p>
-					<p>Highlight <span class="fragment highlight-red">red</span> <span
-							class="fragment highlight-blue">blue</span> <span
-							class="fragment highlight-green">green</span></p>
+				</section>
+				<!--SLIDE 11 - MAX SUBDAG--------------------------------------------------------->
+				<section>
+					<h2>Max k-cluster SubDAG</h2>
+					<p>
+						<img src="./media/images/k-cluster/maxSD.PNG">
+					</p>
+					<p>
+					<ul>
+						<li class="fragment">Maximum 0-Cluster SubDAG is...</li>
+						<p></p>
+						<li class="fragment">NP-Hard.</li>
+						<p></p>
+					</ul>
+					</p>
+
 				</section>
 			</section>
+			<!--SLIDE 12 - MAX SUBDAG--------------------------------------------------------->
+			<style>
+				.img {
+					position: absolute;
+					left: 240px;
+					max-width: 50%;
 
-			<section id="transitions">
-				<h2>Transition Styles</h2>
-				<p>
-					You can select from different transitions, like: <br>
-					<a href="?transition=none#/transitions">None</a> -
-					<a href="?transition=fade#/transitions">Fade</a> -
-					<a href="?transition=slide#/transitions">Slide</a> -
-					<a href="?transition=convex#/transitions">Convex</a> -
-					<a href="?transition=concave#/transitions">Concave</a> -
-					<a href="?transition=zoom#/transitions">Zoom</a>
-				</p>
+				}
+			</style>
+
+			<section data-background="#dddddd">
+				<h1>GHOSTDAG Protocol</h1>
 			</section>
-
-			<section id="themes">
-				<h2>Themes</h2>
-				<p>
-					reveal.js comes with a few themes built in: <br>
-					<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-					<a href="#"
-						onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black
-						(default)</a> -
-					<a href="#"
-						onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a>
-					-
-					<a href="#"
-						onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a>
-					-
-					<a href="#"
-						onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a>
-					-
-					<a href="#"
-						onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a>
-					-
-					<a href="#"
-						onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a>
-					<br>
-					<a href="#"
-						onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a>
-					-
-					<a href="#"
-						onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a>
-					-
-					<a href="#"
-						onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a>
-					-
-					<a href="#"
-						onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a>
-					-
-					<a href="#"
-						onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-				</p>
-			</section>
-
 			<section>
-				<section data-background="#dddddd">
-					<h2>Slide Backgrounds</h2>
-					<p>
-						Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS
-						color formats are supported.
-					</p>
-					<a href="#" class="navigate-down">
-						<img width="178" height="238"
-							data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-					</a>
-				</section>
-				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-					<h2>Image Backgrounds</h2>
-					<pre><code class="hljs html">&lt;section data-background="image.png"&gt;</code></pre>
-				</section>
-				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png"
-					data-background-repeat="repeat" data-background-size="100px">
-					<h2>Tiled Backgrounds</h2>
-					<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-				</section>
-				<section
-					data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm"
-					data-background-color="#000000">
-					<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-						<h2>Video Backgrounds</h2>
-						<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-					</div>
-				</section>
-				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-					<h2>... and GIFs!</h2>
-				</section>
+				<h2>Graph Algorithm</h2>
+				<p>
+					<img class="fragment img" src="media/images/k-cluster/part1.PNG">
+					<img class="fragment img" src="media/images/k-cluster/Capture2.PNG">
+					<img class="fragment img" src="media/images/k-cluster/Capture3.PNG">
+					<img class="fragment img" src="media/images/k-cluster/Capture4.PNG">
+					<img class="fragment img" src="media/images/k-cluster/Capture5.PNG">
+				</p>
+			</section>
+			<section
+				data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm"
+				data-background-color="#000000">
+				<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+					<h2>Video Backgrounds</h2>
+					<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+				</div>
+			</section>
+			<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+				<h2>... and GIFs!</h2>
+			</section>
 			</section>
 
 			<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
