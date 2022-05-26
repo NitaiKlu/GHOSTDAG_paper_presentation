@@ -186,7 +186,7 @@
 					<li class="fragment">Reference to <label class="fragment highlight-red">all blocks</label> in
 						tips(G) when publishing a block.</li>
 					<p></p>
-					<li class="fragment">Broadcast as quickly as possible.</li>
+					<li class="fragment">Embed in the header a list of all tips locally observed.</li>
 					<p></p>
 				</ol>
 				</p>
@@ -234,12 +234,11 @@
 
 				</section>
 			</section>
-			<!--SLIDE 12 - MAX SUBDAG--------------------------------------------------------->
+			<!--SLIDE 12 - GHOSTDAG--------------------------------------------------------->
 			<style>
 				.img {
 					position: absolute;
 					left: 240px;
-					max-width: 50%;
 
 				}
 			</style>
@@ -247,15 +246,30 @@
 			<section data-background="#dddddd">
 				<h1>GHOSTDAG Protocol</h1>
 			</section>
+			<!--SLIDE 12 - Graph Algorithm--------------------------------------------------------->
 			<section>
-				<h2>Graph Algorithm</h2>
-				<p>
-					<img class="fragment img" src="media/images/k-cluster/part1.PNG">
-					<img class="fragment img" src="media/images/k-cluster/Capture2.PNG">
-					<img class="fragment img" src="media/images/k-cluster/Capture3.PNG">
-					<img class="fragment img" src="media/images/k-cluster/Capture4.PNG">
-					<img class="fragment img" src="media/images/k-cluster/Capture5.PNG">
-				</p>
+				<section>
+					<h2>Graph Algorithm</h2>
+					<p>
+						<ul>
+							<li class="fragment">Greedy Algorithm.</li>
+							<p></p>
+							<li class="fragment">Create a score for each block.</li>
+							<p></p>
+							<li class="fragment">Follow the highest ranked nodes, dismiss their Anticone. </li>
+							<img class="fragment" width="60%" style="" src="./media/images/k-cluster/part1.PNG">
+						</ul>
+					</p>
+				</section>
+				<section  data-background-iframe="https://eprint.iacr.org/2018/104.pdf" data-background-interactive>
+					<!--<p>
+						<img class="fragment img" width="60%" src="media/images/k-cluster/part1.PNG">
+						<img class="fragment img" src="media/images/k-cluster/Capture2.PNG">
+						<img class="fragment img" src="media/images/k-cluster/Capture3.PNG">
+						<img class="fragment img" src="media/images/k-cluster/Capture4.PNG">
+						<img class="fragment img" src="media/images/k-cluster/Capture5.PNG">
+					</p>-->
+				</section>
 			</section>
 			<section
 				data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm"
